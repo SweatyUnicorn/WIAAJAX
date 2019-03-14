@@ -48,13 +48,13 @@
         <main>
             <div class="infcon">
                 strona została zrobiona na zadanie na zajęcia z WIA<br>
-                właścicielem jest Dominik Molenda<br>
-                Twórcą strony jest Dominik Molenda<br>
-                Strona sotała wykonana w maju 2018 roku<br>
+                właścicielem jest Dominik Molenda i Michał Stelmaszyk<br>
+                Twórcą strony jest Dominik Molenda  i Michał Stelmaszyk<br>
+                Strona sotała wykonana w maju 2019 roku<br>
             </div>
         </main>
         <footer>
-            <p  id="copyright">Copyright &copy 2018 by Dominik Molenda</p>
+            <p  id="copyright">Copyright &copy 2019 by Dominik Molenda & Michał Stelmaszyk</p>
         </footer>
     </body>
 </html>

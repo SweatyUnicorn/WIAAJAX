@@ -54,10 +54,10 @@
 					    if ($pass1==$pass2)
 					    {
 						    echo "Rejestruje użytkownika $nickname<br>";
-						    $link=mysqli_connect("localhost", "root", "", "website");
-						    $returnQuery=mysqli_query($link, "SELECT * FROM accounts WHERE nickname='$nickname'");
+						    $link=mysqli_connect("localhost", "root", "", "sound_news");
+						    $returnQuery=mysqli_query($link, "SELECT * FROM users WHERE login='$nickname'");
 						    if ($returnQuery->num_rows != 0) echo "Taki login juz istnieje";
-						    else mysqli_query($link, "INSERT INTO accounts VALUES('', '$nickname', '$pass1')");
+						    else mysqli_query($link, "INSERT INTO users VALUES('', '$nickname', '$pass1')");
 					    }else
 						echo "Hasla nie sa zgodne";
                 }else
@@ -76,7 +76,7 @@
             rejestrując się akceptujesz <a id="regulamin" href="regulamin.php">regulamin</a>
         </main>
         <footer>
-            <p  id="copyright">Copyright &copy 2018 by Dominik Molenda</p>
+            <p  id="copyright">Copyright &copy 2019 by Dominik Molenda & Michał Stelmaszyk</p>
         </footer>
     </body>
 </html>
