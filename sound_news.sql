@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 14 Mar 2019, 09:12
+-- Czas generowania: 14 Mar 2019, 09:22
 -- Wersja serwera: 10.1.36-MariaDB
 -- Wersja PHP: 7.2.10
 
@@ -80,7 +80,7 @@ CREATE TABLE `recenzje` (
   `tekst` text COLLATE utf8_polish_ci NOT NULL,
   `ocena` int(11) NOT NULL,
   `data` date NOT NULL,
-  `status` varchar(10) COLLATE utf8_polish_ci NOT NULL
+  `is_up` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 -- --------------------------------------------------------
