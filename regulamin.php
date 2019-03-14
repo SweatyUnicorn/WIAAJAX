@@ -53,7 +53,7 @@
             <p>5. Dane użytkonika mogą być wykorzystane przez Admina na różne sposoby, bez wiedzy użytkownika</p><br>
         </main>
         <footer>
-            <p  id="copyright">Copyright &copy 2018 by Dominik Molenda</p>
+            <p  id="copyright">Copyright &copy 2019 by Dominik Molenda & Michał Stelmaszyk</p>
         </footer>
     </body>
 </html>

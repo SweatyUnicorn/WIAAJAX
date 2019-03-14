@@ -52,6 +52,8 @@
             <?php
             $link=mysqli_connect("localhost", "root", "", "sound_news");
             mysqli_query($link, "SET NAMES utf8");
+
+            //tu będzie wyświetlania postów
             /*$result=mysqli_query($link, "SELECT post.id, post.title, post.content, post.status, post.slug, category.category FROM category, post WHERE post.id_category = category.id_category ORDER BY post.slug DESC, post.id DESC");
 
             while($row=mysqli_fetch_assoc($result))
