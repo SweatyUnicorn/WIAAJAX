@@ -48,35 +48,46 @@
             }
             ?>
         </nav>
-        <main>
+        <main style="min-height: 500px;">
             <?php
-            $link=mysqli_connect("localhost", "root", "", "sound_news");
+
+            if (isset($_POST["preview"]))
+            {
+                $id_post=$_POST["preview"];
+                $link=mysqli_connect("localhost", "root", "", "website");
             mysqli_query($link, "SET NAMES utf8");
-            /*$result=mysqli_query($link, "SELECT post.id, post.title, post.content, post.status, post.slug, category.category FROM category, post WHERE post.id_category = category.id_category ORDER BY post.slug DESC, post.id DESC");
+            $result=mysqli_query($link, "SELECT post.title, post.content, category.category FROM category, post WHERE post.id = $id_post AND post.id_category = category.id_category");
 
             while($row=mysqli_fetch_assoc($result))
                     {
-                        $id_post=$row["id"];
                         $title=$row["title"];
                         $content=$row["content"];
-                        $status=$row["status"];
-                        $slug=$row["slug"];
                         $categ=$row["category"];
 
-                        if($status=="Tak")
-                        {
-                        echo "<article>
-                                <h4>$title</h4>
+                        echo "<div id='post'>
+                                <p>kategoria: $categ</p>
+                                <h2>$title</h2>
                                     <section>
+                                        
                                         <p>$content</p>
-                                        <form action='post.php' method='post'>
-                                        <input type='hidden' name='preview' value='$id_post'>
-                                        <input class='button' type='submit' value='read more...' name='read_more'>
-                                        </form>
                                     </section>
-                                </article>";
-                        }
-                    }*/
+                                ";
+                                $resultTag=mysqli_query($link, "SELECT tag.tag FROM post_tags, tag WHERE tag.id_tag = post_tags.id_tag AND post_tags.id_post=$id_post");
+                                echo "<p style='margin-top: 175px;'>tagi:";
+                                while($row=mysqli_fetch_assoc($resultTag))
+                                {
+                                    $tagg=$row["tag"];
+                                    echo "$tagg, ";
+                                }
+                                echo "</p>";
+
+                        echo "</div>";
+                    }
+            }else
+            {
+                echo "<div id='no_admin1'></div>";
+            }
+            
             ?>
         </main>
         <footer>

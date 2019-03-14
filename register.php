@@ -5,14 +5,12 @@
         <link rel="Shortcut icon" href="cookiecorn.png" />
         <link rel="stylesheet" href="main.css">
         <meta charset="UTF-8">
-            
     </head>
     <body>
         <header>
             <img id="logo" src="cookiecorn.png">
             <p id="uni">Unicorn</p>
             <p id="news">News</p>
-
             <?php
                 session_start();
                 if (isset($_SESSION["zalogowany"])){
@@ -25,15 +23,13 @@
                         <input class="button" type="submit" value="register">
                     </form>
                     <form class="logreg" action="login.php" method="post">
-                        <input class="border fgold_colo" type="text" name="nickname" placeholder="nickname" required> 
-                        <input class="border fgold_colo" type="password" name="password" placeholder="password" required>
+                        <input class="border fgold_colo" type="text" name="nickname" placeholder="nickname"> 
+                        <input class="border fgold_colo" type="text" name="password" placeholder="password">
                         <input class="button" type="submit" value="login"> 
                     </form>
                     <?php
                 }
             ?>
-
-            
         </header>
         <nav>
             | <a class="menu_option" href="index.php">Main</a> | 
@@ -49,35 +45,35 @@
             ?>
         </nav>
         <main>
-            <?php
-            $link=mysqli_connect("localhost", "root", "", "sound_news");
-            mysqli_query($link, "SET NAMES utf8");
-            /*$result=mysqli_query($link, "SELECT post.id, post.title, post.content, post.status, post.slug, category.category FROM category, post WHERE post.id_category = category.id_category ORDER BY post.slug DESC, post.id DESC");
-
-            while($row=mysqli_fetch_assoc($result))
-                    {
-                        $id_post=$row["id"];
-                        $title=$row["title"];
-                        $content=$row["content"];
-                        $status=$row["status"];
-                        $slug=$row["slug"];
-                        $categ=$row["category"];
-
-                        if($status=="Tak")
-                        {
-                        echo "<article>
-                                <h4>$title</h4>
-                                    <section>
-                                        <p>$content</p>
-                                        <form action='post.php' method='post'>
-                                        <input type='hidden' name='preview' value='$id_post'>
-                                        <input class='button' type='submit' value='read more...' name='read_more'>
-                                        </form>
-                                    </section>
-                                </article>";
-                        }
-                    }*/
+            <?php  
+                if (isset($_POST["nickname"]) && isset($_POST["pass1"]) && isset($_POST["pass2"]))
+		        {
+                        $nickname=$_POST["nickname"];
+					    $pass1=$_POST["pass1"];
+					    $pass2=$_POST["pass2"];
+					    if ($pass1==$pass2)
+					    {
+						    echo "Rejestruje użytkownika $nickname<br>";
+						    $link=mysqli_connect("localhost", "root", "", "website");
+						    $returnQuery=mysqli_query($link, "SELECT * FROM accounts WHERE nickname='$nickname'");
+						    if ($returnQuery->num_rows != 0) echo "Taki login juz istnieje";
+						    else mysqli_query($link, "INSERT INTO accounts VALUES('', '$nickname', '$pass1')");
+					    }else
+						echo "Hasla nie sa zgodne";
+                }else
+                echo "Uzyj formularza rejestracji";
+                    if (!isset($_POST["login"])	&& !isset($_POST["pass"]) &&!isset($_POST["returnPass"]))
+                {
+                    echo "
+                    <form action='register.php' method='post'>
+                    <input class='border fgold_colo' type='text' name='nickname' placeholder='nickname' required><br>
+                    <input class='border fgold_colo' type='text' name='pass1' placeholder='password' required><br>
+                    <input class='border fgold_colo' type='text' name='pass2' placeholder='password' required><br>
+                    <input class='button' type='submit' value='register' name='register'>
+                    </form>";
+                }
             ?>
+            rejestrując się akceptujesz <a id="regulamin" href="regulamin.php">regulamin</a>
         </main>
         <footer>
             <p  id="copyright">Copyright &copy 2018 by Dominik Molenda</p>

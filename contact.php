@@ -12,7 +12,6 @@
             <img id="logo" src="cookiecorn.png">
             <p id="uni">Unicorn</p>
             <p id="news">News</p>
-
             <?php
                 session_start();
                 if (isset($_SESSION["zalogowany"])){
@@ -25,15 +24,13 @@
                         <input class="button" type="submit" value="register">
                     </form>
                     <form class="logreg" action="login.php" method="post">
-                        <input class="border fgold_colo" type="text" name="nickname" placeholder="nickname" required> 
-                        <input class="border fgold_colo" type="password" name="password" placeholder="password" required>
+                        <input class="border fgold_colo" type="text" name="nickname" placeholder="nickname"> 
+                        <input class="border fgold_colo" type="password" name="password" placeholder="password">
                         <input class="button" type="submit" value="login"> 
                     </form>
                     <?php
                 }
             ?>
-
-            
         </header>
         <nav>
             | <a class="menu_option" href="index.php">Main</a> | 
@@ -49,35 +46,12 @@
             ?>
         </nav>
         <main>
-            <?php
-            $link=mysqli_connect("localhost", "root", "", "sound_news");
-            mysqli_query($link, "SET NAMES utf8");
-            /*$result=mysqli_query($link, "SELECT post.id, post.title, post.content, post.status, post.slug, category.category FROM category, post WHERE post.id_category = category.id_category ORDER BY post.slug DESC, post.id DESC");
-
-            while($row=mysqli_fetch_assoc($result))
-                    {
-                        $id_post=$row["id"];
-                        $title=$row["title"];
-                        $content=$row["content"];
-                        $status=$row["status"];
-                        $slug=$row["slug"];
-                        $categ=$row["category"];
-
-                        if($status=="Tak")
-                        {
-                        echo "<article>
-                                <h4>$title</h4>
-                                    <section>
-                                        <p>$content</p>
-                                        <form action='post.php' method='post'>
-                                        <input type='hidden' name='preview' value='$id_post'>
-                                        <input class='button' type='submit' value='read more...' name='read_more'>
-                                        </form>
-                                    </section>
-                                </article>";
-                        }
-                    }*/
-            ?>
+            <div class="infcon">
+                telefon: niedostępny<br>
+                e-mail: dominikmolenda@outlook.com<br>
+                adres: niedostępny<br>
+                gdzie szukać: Technikum SCI w Szczecinie<br>
+            </div>
         </main>
         <footer>
             <p  id="copyright">Copyright &copy 2018 by Dominik Molenda</p>
