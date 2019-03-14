@@ -2,14 +2,14 @@
 <html>
     <head>
         <title>Sound_News</title>
-        <link rel="Shortcut icon" href="cookiecorn.png" />
+        <link rel="Shortcut icon" href="soundwave.png" />
         <link rel="stylesheet" href="main.css">
         <meta charset="UTF-8">
             
     </head>
     <body>
         <header>
-            <img id="logo" src="cookiecorn.png">
+            <img id="logo" src="soundwave.png">
             <p id="uni">Sound</p>
             <p id="news">News</p>
 
