@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Unicorn News</title>
+        <title>Sound_News</title>
         <link rel="Shortcut icon" href="cookiecorn.png" />
         <link rel="stylesheet" href="main.css">
         <meta charset="UTF-8">
@@ -9,7 +9,7 @@
     <body>
         <header>
             <img id="logo" src="cookiecorn.png">
-            <p id="uni">Unicorn</p>
+            <p id="uni">Sound</p>
             <p id="news">News</p>
             <?php
                 session_start();
