@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 14 Mar 2019, 09:22
+-- Czas generowania: 28 Mar 2019, 09:22
 -- Wersja serwera: 10.1.36-MariaDB
 -- Wersja PHP: 7.2.10
 
@@ -36,6 +36,13 @@ CREATE TABLE `album` (
   `data_wydania` date NOT NULL,
   `okladka` varchar(30) COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `album`
+--
+
+INSERT INTO `album` (`id`, `wykonawca_id`, `nazwa`, `gatunek_id`, `data_wydania`, `okladka`) VALUES
+(1, 6, 'Hydrograd', 6, '2017-06-30', '');
 
 -- --------------------------------------------------------
 
@@ -82,6 +89,13 @@ CREATE TABLE `recenzje` (
   `data` date NOT NULL,
   `is_up` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `recenzje`
+--
+
+INSERT INTO `recenzje` (`id`, `album_id`, `tekst`, `ocena`, `data`, `is_up`) VALUES
+(1, 1, 'tak', 5, '2019-03-28', 1);
 
 -- --------------------------------------------------------
 
@@ -195,7 +209,7 @@ ALTER TABLE `wykonawca`
 -- AUTO_INCREMENT dla tabeli `album`
 --
 ALTER TABLE `album`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `gatunek`
@@ -207,7 +221,7 @@ ALTER TABLE `gatunek`
 -- AUTO_INCREMENT dla tabeli `recenzje`
 --
 ALTER TABLE `recenzje`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
